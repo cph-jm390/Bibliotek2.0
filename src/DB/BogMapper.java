@@ -63,9 +63,10 @@ public class BogMapper {
         }
     }
 
-    public static String flestBøger(String mestPopulæreBog) {
+    public static String flestBøger() {
         String sql = " select Top 1 titel From BogTabel group by titel order by count(*) desc";
 
+        String mestPopulæreBog = " ";
         try (Connection con = ConnectionConfiguration.getConnection();
              PreparedStatement ps = con.prepareStatement(sql);) {
              ResultSet res = ps.executeQuery();
