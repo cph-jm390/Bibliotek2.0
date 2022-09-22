@@ -19,7 +19,7 @@ public class Finsk extends ÆndringAfSprog{
 
     @Override
     public String options() {
-        return "Paina 1: Luo kirja"+ "\n" +"Paina 2: hanki kirjoja" +"\n" +"Paina 3: Poista kirja"+"\n" +"Paina 4: näytä kirjaluettelo " + "\n" +"Paina 5: vaihda kieli";
+        return "Paina 1: Luo kirja"+ "\n" +"Paina 2: Hanki kirjoja" +"\n" +"Paina 3: Poista kirja"+"\n" +"Paina 4: Näytä kirjaluettelo " + "\n" +"Paina 5: Vaihda kieli"+"\n" +"Paina 6: Näytä suosituin kirja";
     }
 
     @Override

@@ -23,7 +23,7 @@ public class Dansk extends ÆndringAfSprog {
 
     @Override
     public String options() {
-        return "Tryk 1 for: Opret bog"+  "\n" +"Tryk 2 for: hent bøger" +"\n" +"Tryk 3 for: Slet bog"+"\n" +"Tryk 4 for: vis bogliste"+  "\n" +"Tryk 5 for: skift sprog";
+        return "Tryk 1 for: Opret bog"+  "\n" +"Tryk 2 for: Hent bøger" +"\n" +"Tryk 3 for: Slet bog"+"\n" +"Tryk 4 for: Vis bogliste"+  "\n" +"Tryk 5 for: Skift sprog" +  "\n" + "Tryk 6 for: Vis mest populære bog";
 
     }
 

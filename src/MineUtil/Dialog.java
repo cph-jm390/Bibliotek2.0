@@ -1,4 +1,5 @@
 package MineUtil;
+import DB.BogMapper;
 import Entitet.Bog;
 import Sprog.Dansk;
 import Sprog.Engelsk;
@@ -44,8 +45,11 @@ public class Dialog {
                         }
                     case "5":
                         sprogSkift();
-
                         break;
+                    case "6":
+                        BogMapper.flestBøger();
+                        break;
+
                 }
             }
 
