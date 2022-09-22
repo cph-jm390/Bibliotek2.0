@@ -1,6 +1,8 @@
 package DB;
 
 import Entitet.Bog;
+import Entitet.Låner;
+
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,7 +17,7 @@ public class BogMapper {
 
             try {
                 ps.setString(1, bog.getForfatter());
-                ps.setString(2, bog.getTitle());
+                ps.setString(2, bog.getTitel());
                 ps.executeUpdate();
 
                 ResultSet resultSet = ps.getGeneratedKeys();
@@ -64,27 +66,29 @@ public class BogMapper {
         }
     }
 
-    public static String bogUdlån(){
+    public static String bogUdlån() {
         String sql = "INSERT INTO UdlånsTabel (bogID, lånerID, bogTitel) VALUES (?,?,?)";
 
         try (Connection con = ConnectionConfiguration.getConnection();
-            PreparedStatement ps = con.prepareStatement(sql)){
+             PreparedStatement ps = con.prepareStatement(sql)) {
 
-            try{
-                ps.setString(1, bruger.getBogID());
-                ps.setString(2, bruger.getLånerID());
-                ps.setString(3, bruger.getBogTitel());
+            try {
+                ps.setInt(1, Bog.getBogID());
+                ps.setInt(2, Låner.getLånerID());
+                ps.setString(3, Bog.getTitel());
                 ps.executeUpdate();
 
-            } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } ;
+                ResultSet resultSet = ps.getGeneratedKeys();
+                resultSet.next();
+                Låner.setLånerID(resultSet.getInt(1));
 
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-        return null;
+        return bogUdlån();
     }
 
 

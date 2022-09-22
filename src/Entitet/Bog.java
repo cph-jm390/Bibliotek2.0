@@ -3,41 +3,38 @@ package Entitet;
 public class Bog
 {
 
-    private int bogId;
-    private String title;
+    private static int bogID;
+    private static String titel;
     private String forfatter;
 
     public Bog(int bogId, String title, String forfatter)  // det er fra min DB til opbjekt
     {
-        this.bogId = bogId;
-        this.title = title;
+        this.bogID = bogId;
+        this.titel = title;
         this.forfatter = forfatter;
     }
 
     public Bog(String title, String forfatter)  // fra objekt til DB (første gang)
     {
-        this.title = title;
+        this.titel = title;
         this.forfatter = forfatter;
     }
 
-    public int getBogId()
+    public static int getBogID()
     {
-        return bogId;
+        return bogID;
     }
 
     public void setBogId(int bogId)
     {
-        this.bogId = bogId;
+        this.bogID = bogId;
     }
 
-    public String getTitle()
-    {
-        return title;
-    }
+    public static String getTitel() {return titel;}
 
-    public void setTitle(String title)
+    public void setTitel(String titel)
     {
-        this.title = title;
+        this.titel = titel;
     }
 
     public String getForfatter()
@@ -53,6 +50,6 @@ public class Bog
     @Override
     public String toString()
     {
-        return "Bog{" + "bogId=" + bogId + ", title='" + title + '\'' + ", forfatter='" + forfatter + '\'' + '}';
+        return "Bog{" + "bogId=" + bogID + ", title='" + titel + '\'' + ", forfatter='" + forfatter + '\'' + '}';
     }
 }

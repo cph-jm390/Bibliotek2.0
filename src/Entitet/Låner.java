@@ -1,17 +1,20 @@
+package Entitet;
+
 public class Låner {
-    int idLånere;
+    static int lånerID;
     String LånerNavn;
+
     public Låner(int idLånere, String lånerNavn) {
-        this.idLånere = idLånere;
+        this.lånerID = idLånere;
         LånerNavn = lånerNavn;
     }
 
-    public int getIdLånere() {
-        return idLånere;
+    public static int getLånerID() {
+        return lånerID;
     }
 
-    public void setIdLånere(int idLånere) {
-        this.idLånere = idLånere;
+    public static void setLånerID(int lånerID) {
+        this.lånerID = lånerID;
     }
 
     public String getLånerNavn() {
