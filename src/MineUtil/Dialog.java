@@ -1,8 +1,9 @@
 package MineUtil;
-
 import Entitet.Bog;
-import MineUtil.BrugerInput;
-
+import Sprog.Dansk;
+import Sprog.Engelsk;
+import Sprog.Finsk;
+import Sprog.ÆndringAfSprog;
 import java.sql.SQLException;
 import java.util.List;
 
