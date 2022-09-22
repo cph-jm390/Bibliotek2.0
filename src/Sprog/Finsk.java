@@ -17,4 +17,10 @@ public class Finsk extends ÆndringAfSprog{
                 "Paina 3 vaihtaaksesi kielen suomeksi";
     }
 
+    @Override
+    public String options() {
+        return "Tryk 1 for: Opret bog"+  "\n" +"Tryk 2 for: hent bøger" +"\n" +"Tryk 3 for: Slet bog"+"\n" +"Tryk 4 for: vis bogliste"+  "\n" +"Tryk 5 for: skift sprog";
+
+    }
+
 }

@@ -7,4 +7,6 @@ public abstract class ÆndringAfSprog {
     public abstract String changelanguage();
 
     public abstract String selectLangage();
+
+    public abstract String options();
 }

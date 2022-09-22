@@ -16,27 +16,34 @@ public class Dialog {
         }
     }
 
+
+
     public static void terminalDialog() throws SQLException {
         List<Bog> bogList = null;
+        ÆndringAfSprog sprog = new Dansk();
+
         while (true) {
-            switch (BrugerInput.getString("hvad ønsker du")) {
-                case "opret bog":
+            // if sprog = dansk
+            switch (BrugerInput.getString(sprog.options())) {
+                case "1":
                     Bog bog = new Bog(BrugerInput.getString("angiv title"), BrugerInput.getString("angiv forfatter"));
                     bogList.add(Bibliotek.opretBog(bog));
                     break;
-                case "hent bøger":
+                case "2":
                     bogList = Bibliotek.HentBøger();
                     udskriv(bogList);
                     break;
-                case "slet bog":
+                case "3":
                     System.out.println(Bibliotek.sletBog(BrugerInput.getInt("angiv bog id")));
                     break;
-                case "vis bogliste":
+                case "4":
                     try {
                         udskriv(bogList);
                     } catch (NullPointerException e) {
                         System.out.println("\nNo book-havin' ass");
                     }
+                case "5":
+                    break;
             }
         }
     }

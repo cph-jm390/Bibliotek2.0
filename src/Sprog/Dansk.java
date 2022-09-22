@@ -19,6 +19,12 @@ public class Dansk extends ÆndringAfSprog {
         return "\nTryk 2 for at skifte sprog til engelsk." +
                 "\nTryk 3 for at skifte sprog til finsk.";
     }
+
+    @Override
+    public String options() {
+        return "Tryk 1 for: Opret bog"+  "\n" +"Tryk 2 for: hent bøger" +"\n" +"Tryk 3 for: Slet bog"+"\n" +"Tryk 4 for: vis bogliste"+  "\n" +"Tryk 5 for: skift sprog";
+
+    }
 }
 
 
