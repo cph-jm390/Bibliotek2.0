@@ -8,7 +8,7 @@ import java.util.List;
 public class BogMapper {
 
     public static Bog opretBog(Bog bog) throws SQLException {
-        String sql = "INSERT INTO BogTabel (Forfatter , Title ) VALUES (?, ?)";
+        String sql = "INSERT INTO BogTabel (forfatter , titel ) VALUES (?, ?)";
 
         try (Connection con = ConnectionConfiguration.getConnection();
 
@@ -54,7 +54,7 @@ public class BogMapper {
     }
 
     public static String sletBog(int bog_id) throws SQLException {
-        String sql = "delete from BogTabel where idBogTabel = ?";
+        String sql = "delete from BogTabel where idBog = ?";
 
         try (Connection con = ConnectionConfiguration.getConnection();
              PreparedStatement ps = con.prepareStatement(sql);) {
@@ -70,11 +70,15 @@ public class BogMapper {
     }
 
     public static String flestBøger(String mestPopulæreBog) {
-        String sql = " select Top 1 Title From BogTabel group by Title order by count(*) desc";
+        String sql = " select Top 1 titel From BogTabel group by titel order by count(*) desc";
 
         try (Connection con = ConnectionConfiguration.getConnection();
              PreparedStatement ps = con.prepareStatement(sql);) {
              ResultSet res = ps.executeQuery();
+
+             while (){
+
+             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
