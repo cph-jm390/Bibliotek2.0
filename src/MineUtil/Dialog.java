@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class Dialog {
+    static ÆndringAfSprog sprog = new Dansk();
 
     public static void udskriv(List<Bog> bøger) {
 
@@ -19,7 +20,7 @@ public class Dialog {
 
     public static void terminalDialog() throws SQLException {
         List<Bog> bogList = null;
-        ÆndringAfSprog sprog = new Dansk();
+
 
         while (true) {
 
@@ -42,20 +43,26 @@ public class Dialog {
                             System.out.println(sprog.exceptionStringMSG());
                         }
                     case "5":
-                        switch(BrugerInput.getString(sprog.selectLangage())){
-                            case "1":
-                                sprog= new Engelsk();
-                                break;
-                            case "2":
-                                sprog = new Dansk();
-                                break;
-                            case "3":
-                                sprog = new Finsk();
-                                break;
-                        }
+                        sprogSkift();
 
                         break;
                 }
+            }
+
+
+        }
+
+        public static void sprogSkift(){
+            switch(BrugerInput.getString(sprog.selectLangage())){
+                case "1":
+                    sprog= new Engelsk();
+                    break;
+                case "2":
+                    sprog = new Dansk();
+                    break;
+                case "3":
+                    sprog = new Finsk();
+                    break;
             }
         }
     }
