@@ -34,7 +34,7 @@ public class BogMapper {
     public static List<Bog> hentBøger() throws SQLException {
         List<Bog> bogList = new LinkedList<>();
 
-        String sql = "select *  from BogTabel";
+        String sql = "SELECT * FROM BogTabel";
 
         try (Connection con = ConnectionConfiguration.getConnection();  // får en connection
 
