@@ -17,8 +17,8 @@ public class Main {
                     break;
                 case "gamers":
                     break;
-                case "slackergruppen":
-                    break;
+                case "vis kartotek":
+                    udskriv(bogList);
 
 
             }
