@@ -18,8 +18,11 @@ public class Main {
                 case "gamers":
                     break;
                 case "vis kartotek":
-                    udskriv(bogList);
-
+                    try {
+                        udskriv(bogList);
+                    }catch(NullPointerException e){
+                        System.out.println("\nNo book-havin' ass");
+                    }
 
             }
 
