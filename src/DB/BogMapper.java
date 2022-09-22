@@ -11,7 +11,6 @@ public class BogMapper {
         String sql = "INSERT INTO BogTabel (forfatter , titel ) VALUES (?, ?)";
 
         try (Connection con = ConnectionConfiguration.getConnection();
-
              PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);) {
 
             try {
@@ -21,7 +20,6 @@ public class BogMapper {
 
                 ResultSet resultSet = ps.getGeneratedKeys();
                 resultSet.next();
-
                 bog.setBogId(resultSet.getInt(1));
 
             } catch (SQLException throwable) {
@@ -33,7 +31,6 @@ public class BogMapper {
 
     public static List<Bog> hentBøger() throws SQLException {
         List<Bog> bogList = new LinkedList<>();
-
         String sql = "SELECT * FROM BogTabel";
 
         try (Connection con = ConnectionConfiguration.getConnection();  // får en connection
@@ -46,7 +43,6 @@ public class BogMapper {
                 int idBog = resultSet.getInt("idBogTabel");
                 String forfatter = resultSet.getString("Forfatter");
                 String title = resultSet.getString("title");
-
                 bogList.add(new Bog(idBog, title, forfatter));
             }
             return bogList;
@@ -58,10 +54,8 @@ public class BogMapper {
 
         try (Connection con = ConnectionConfiguration.getConnection();
              PreparedStatement ps = con.prepareStatement(sql);) {
-
             ps.setInt(1, bog_id);
             int res = ps.executeUpdate();
-
             if (res > 0) {
                 return "en bog med bog id " + bog_id + " er nu slettet";
             }
@@ -76,10 +70,9 @@ public class BogMapper {
              PreparedStatement ps = con.prepareStatement(sql);) {
              ResultSet res = ps.executeQuery();
 
-             while (){
-
+             while (res.next()){
+                 return "Mest udlånte bog er: " + mestPopulæreBog;
              }
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
