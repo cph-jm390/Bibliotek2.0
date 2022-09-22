@@ -18,7 +18,7 @@ public class Engelsk extends ÆndringAfSprog{
 
     @Override
     public String options() {
-        return "Tryk 1 for: Opret bog"+  "\n" +"Tryk 2 for: hent bøger" +"\n" +"Tryk 3 for: Slet bog"+"\n" +"Tryk 4 for: vis bogliste"+  "\n" +"Tryk 5 for: skift sprog";
-
+        return
+                "Press 1 for: Create book"+ "\n" +"Press 2 for: get books" +"\n" +"Press 3 for: Delete book"+"\n" +"Press 4 for: show book list" + "\n" +"Press 5 for: change language";
     }
 }

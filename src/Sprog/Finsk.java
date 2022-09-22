@@ -19,8 +19,7 @@ public class Finsk extends ÆndringAfSprog{
 
     @Override
     public String options() {
-        return "Tryk 1 for: Opret bog"+  "\n" +"Tryk 2 for: hent bøger" +"\n" +"Tryk 3 for: Slet bog"+"\n" +"Tryk 4 for: vis bogliste"+  "\n" +"Tryk 5 for: skift sprog";
-
+        return "Paina 1: Luo kirja"+ "\n" +"Paina 2: hanki kirjoja" +"\n" +"Paina 3: Poista kirja"+"\n" +"Paina 4: näytä kirjaluettelo " + "\n" +"Paina 5: vaihda kieli";
     }
 
 }
