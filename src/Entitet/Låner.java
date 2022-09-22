@@ -1,27 +1,37 @@
 package Entitet;
 
 public class Låner {
-    static int lånerID;
-    String LånerNavn;
 
-    public Låner(int idLånere, String lånerNavn) {
-        this.lånerID = idLånere;
-        LånerNavn = lånerNavn;
+    private static int lånerID;
+    private static String lånerNavn;
+
+    public Låner(int lånerID, String lånerNavn) {
+        this.lånerID = lånerID;
+        this.lånerNavn = lånerNavn;
+    }
+
+    public Låner(String lånerNavn){
+        this.lånerNavn = lånerNavn;
     }
 
     public static int getLånerID() {
         return lånerID;
     }
 
-    public static void setLånerID(int lånerID) {
+    public void setLånerID(int lånerID) {
         this.lånerID = lånerID;
     }
 
     public String getLånerNavn() {
-        return LånerNavn;
+        return lånerNavn;
     }
 
     public void setLånerNavn(String lånerNavn) {
-        LånerNavn = lånerNavn;
+        this.lånerNavn = lånerNavn;
+    }
+
+    @Override
+    public String toString() {
+        return "Låner{" + "LånerNavn='" + lånerNavn + '\'' + "LånerID"+ lånerID +'}';
     }
 }

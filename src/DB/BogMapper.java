@@ -2,7 +2,6 @@ package DB;
 
 import Entitet.Bog;
 import Entitet.Låner;
-
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,11 +22,30 @@ public class BogMapper {
                 ResultSet resultSet = ps.getGeneratedKeys();
                 resultSet.next();
                 bog.setBogId(resultSet.getInt(1));
-
-            } catch (SQLException throwable) {
-                throwable.printStackTrace();
+                return bog;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-            return bog;
+        }
+    }
+
+    public static Låner opretLåner(Låner låner) throws SQLException {
+        String sql = "INSERT INTO LånerTabel (navn) VALUES (?)";
+
+        try (Connection con = ConnectionConfiguration.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);) {
+
+            try {
+                ps.setString(1, låner.getLånerNavn());
+                ps.executeUpdate();
+
+                ResultSet resultSet = ps.getGeneratedKeys();
+                resultSet.next();
+                låner.setLånerID(resultSet.getInt(1));
+                return låner;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -61,38 +79,32 @@ public class BogMapper {
             if (res > 0) {
                 return "en bog med bog id " + bog_id + " er nu slettet";
             }
-
             return "kunne ikke finde boget med id " + bog_id;
         }
     }
 
-    public static String bogUdlån() {
+    public static Låner bogUdlån(Låner låner, Bog bog) throws SQLException{
         String sql = "INSERT INTO UdlånsTabel (bogID, lånerID, bogTitel) VALUES (?,?,?)";
 
         try (Connection con = ConnectionConfiguration.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
             try {
-                ps.setInt(1, Bog.getBogID());
-                ps.setInt(2, Låner.getLånerID());
-                ps.setString(3, Bog.getTitel());
+                ps.setInt(1, bog.getBogID());
+                ps.setInt(2, låner.getLånerID());
+                ps.setString(3, bog.getTitel());
                 ps.executeUpdate();
 
                 ResultSet resultSet = ps.getGeneratedKeys();
                 resultSet.next();
-                Låner.setLånerID(resultSet.getInt(1));
-
+                låner.setLånerID(resultSet.getInt(1));
+                return låner;
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
-        return bogUdlån();
     }
 
-
-    /*
     public static String flestBøger() {
         String sql = " select Top 1 titel From BogTabel group by titel order by count(*) desc";
         String mestPopulæreBog = " ";
@@ -108,6 +120,4 @@ public class BogMapper {
         }
         return mestPopulæreBog;
     }
-
-     */
 }

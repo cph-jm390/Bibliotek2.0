@@ -17,4 +17,6 @@ public abstract class ÆndringAfSprog {
     public abstract String angivBogID();
 
     public abstract String exceptionStringMSG();
+
+    public abstract String angivNavn();
 }

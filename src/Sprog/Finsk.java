@@ -6,6 +6,7 @@ public class Finsk extends ÆndringAfSprog{
     public String hi() {
         return "Hei ja tervetuloa slackergroupsin kirjastoon!";
     }
+
     @Override
     public String changelanguage() {
         return "Lehdistö 1 varten : Vaihda kieltä";
@@ -19,7 +20,14 @@ public class Finsk extends ÆndringAfSprog{
 
     @Override
     public String options() {
-        return "Paina 1: Luo kirja"+ "\n" +"Paina 2: Hanki kirjoja" +"\n" +"Paina 3: Poista kirja"+"\n" +"Paina 4: Näytä kirjaluettelo " + "\n" +"Paina 5: Vaihda kieli"+"\n" +"Paina 6: Näytä suosituin kirja";
+        return "Paina 1: Luo kirja"+ "\n" +
+                "Paina 2: Luo lainaaja"+ "\n" +
+                "Paina 3: Hanki kirjoja" +"\n" +
+                "Paina 4: Poista kirja"+"\n" +
+                "Paina 5: Näytä kirjaluettelo " + "\n" +
+                "Paina 6: Näytä lainaluettelo" + "\n" +
+                "Paina 7: Näytä suosituin kirja"+"\n" +
+                "Paina 8: Vaihda kieli";
     }
 
     @Override
@@ -30,7 +38,6 @@ public class Finsk extends ÆndringAfSprog{
     @Override
     public String angivTitle() {
         return "määritä otsikko"+"\n";
-
     }
 
     @Override
@@ -43,4 +50,8 @@ public class Finsk extends ÆndringAfSprog{
         return "ei-kirja-having-ass"+"\n";
     }
 
+    @Override
+    public String angivNavn() {
+        return "syötä nimi" + "\n";
+    }
 }

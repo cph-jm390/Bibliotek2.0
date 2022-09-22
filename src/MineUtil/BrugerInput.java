@@ -11,7 +11,6 @@ public class BrugerInput {
     }
 
     public static int getInt(String s) {
-
         while (true) {
             try {
                 int i = Integer.parseInt(getString(s));
@@ -20,7 +19,5 @@ public class BrugerInput {
                 System.out.println("husk det skal være et tal !");
             }
         }
-
-
     }
 }
