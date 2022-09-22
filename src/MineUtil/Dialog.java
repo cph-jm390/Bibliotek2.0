@@ -42,7 +42,18 @@ public class Dialog {
                             System.out.println(sprog.exceptionStringMSG());
                         }
                     case "5":
-                        sprog=new Engelsk();
+                        switch(BrugerInput.getString(sprog.selectLangage())){
+                            case "1":
+                                sprog= new Engelsk();
+                                break;
+                            case "2":
+                                sprog = new Dansk();
+                                break;
+                            case "3":
+                                sprog = new Finsk();
+                                break;
+                        }
+
                         break;
                 }
             }

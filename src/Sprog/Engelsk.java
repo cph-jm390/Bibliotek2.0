@@ -13,7 +13,9 @@ public class Engelsk extends ÆndringAfSprog{
 
     @Override
     public String selectLangage() {
-        return "Press 1 for english" + "\n" + "Press 2 for danish" + "\n" + "Press 3 for finnish";
+        return "Press 1 for: english" + "\n" +
+                "Press 2 for: danish" + "\n" +
+                "Press 3 for: finnish"+ "\n";
     }
 
     @Override

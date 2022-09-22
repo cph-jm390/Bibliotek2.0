@@ -14,7 +14,7 @@ public class Finsk extends ÆndringAfSprog{
     public String selectLangage() {
         return "Paina 1 vaihtaaksesi kielen englanti" + "\n" +
                 "Paina 2 vaihtaaksesi kielen yanskan kieli" + "\n" +
-                "Paina 3 vaihtaaksesi kielen suomeksi";
+                "Paina 3 vaihtaaksesi kielen suomeksi"+ "\n";
     }
 
     @Override

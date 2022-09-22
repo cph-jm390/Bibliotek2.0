@@ -16,8 +16,9 @@ public class Dansk extends ÆndringAfSprog {
 
     @Override
     public String selectLangage() {
-        return "\nTryk 2 for at skifte sprog til engelsk." +
-                "\nTryk 3 for at skifte sprog til finsk.";
+        return "Tryk 1 for: engelsk" + "\n" +
+                "Tryk 2 for: dansk" + "\n" +
+                "Tryk 3 for: finsk"+ "\n";
     }
 
     @Override
