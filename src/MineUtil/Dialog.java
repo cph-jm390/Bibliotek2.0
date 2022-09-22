@@ -31,14 +31,14 @@ public class Dialog {
                     System.out.println(Bibliotek.sletBog(BrugerInput.getInt("angiv bog id")));
                     break;
                 case "vis bogliste":
-                    if (bogList == null) {
-                        System.out.println("du skal hente bogliste fra database først");
-                        break;
+                    try {
+                        udskriv(bogList);
+                    } catch (NullPointerException e) {
+                        System.out.println("\nNo book-havin' ass");
                     }
-                    udskriv(bogList);
-                    break;
             }
         }
     }
 }
+
 
