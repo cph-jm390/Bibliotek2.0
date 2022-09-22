@@ -19,6 +19,6 @@ public class Bibliotek {
         return BogMapper.sletBog(bog_id);
     }
     public static String flestBøger(String mestPopulæreBog) throws SQLException{
-        return BogMapper.flestBøger(mestPopulæreBog);
+        return BogMapper.flestBøger();
     }
 }
