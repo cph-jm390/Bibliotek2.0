@@ -56,7 +56,8 @@ public class BogMapper {
     public static String sletBog(int bog_id) throws SQLException {
         String sql = "delete from BogTabel where idBogTabel = ?";
 
-        try (Connection con = ConnectionConfiguration.getConnection(); PreparedStatement ps = con.prepareStatement(sql);) {
+        try (Connection con = ConnectionConfiguration.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql);) {
 
             ps.setInt(1, bog_id);
             int res = ps.executeUpdate();
@@ -66,5 +67,18 @@ public class BogMapper {
             }
             return "kunne ikke finde boget med id " + bog_id;
         }
+    }
+
+    public static String flestBøger(String mestPopulæreBog) {
+        String sql = " select Top 1 Title From BogTabel group by Title order by count(*) desc";
+
+        try (Connection con = ConnectionConfiguration.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql);) {
+             ResultSet res = ps.executeQuery();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return mestPopulæreBog;
     }
 }

@@ -10,3 +10,6 @@ public class Main {
     }
 }
 
+// TODO: Bibliotek
+//TODO: Sprog
+//TODO: Evt. Statestikker
