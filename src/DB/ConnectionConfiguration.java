@@ -5,16 +5,12 @@ import MineUtil.BrugerInput;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class ConnectionConfiguration
-{
+public class ConnectionConfiguration {
     private static String pass = null;
 
     public static Connection getConnection() {
-
         if (pass == null) {
-
             pass = BrugerInput.getString("angiv password");
-
         }
 
         Connection connection = null;
