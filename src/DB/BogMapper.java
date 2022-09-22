@@ -59,13 +59,13 @@ public class BogMapper {
             if (res > 0) {
                 return "en bog med bog id " + bog_id + " er nu slettet";
             }
+
             return "kunne ikke finde boget med id " + bog_id;
         }
     }
 
     public static String flestBøger() {
         String sql = " select Top 1 titel From BogTabel group by titel order by count(*) desc";
-
         String mestPopulæreBog = " ";
         try (Connection con = ConnectionConfiguration.getConnection();
              PreparedStatement ps = con.prepareStatement(sql);) {
