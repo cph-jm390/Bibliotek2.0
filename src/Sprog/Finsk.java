@@ -22,4 +22,25 @@ public class Finsk extends ÆndringAfSprog{
         return "Paina 1: Luo kirja"+ "\n" +"Paina 2: hanki kirjoja" +"\n" +"Paina 3: Poista kirja"+"\n" +"Paina 4: näytä kirjaluettelo " + "\n" +"Paina 5: vaihda kieli";
     }
 
+    @Override
+    public String angivForfatter() {
+        return "määritä tekijä"+"\n";
+    }
+
+    @Override
+    public String angivTitle() {
+        return "määritä otsikko"+"\n";
+
+    }
+
+    @Override
+    public String angivBogID() {
+        return "määritä kirjan tunnus"+"\n";
+    }
+
+    @Override
+    public String exceptionStringMSG() {
+        return "ei-kirja-having-ass"+"\n";
+    }
+
 }

@@ -25,6 +25,26 @@ public class Dansk extends ÆndringAfSprog {
         return "Tryk 1 for: Opret bog"+  "\n" +"Tryk 2 for: hent bøger" +"\n" +"Tryk 3 for: Slet bog"+"\n" +"Tryk 4 for: vis bogliste"+  "\n" +"Tryk 5 for: skift sprog";
 
     }
+
+    @Override
+    public String angivForfatter() {
+        return "angiv forfatter: "+  "\n";
+    }
+
+    @Override
+    public String angivTitle() {
+        return "angiv title"+  "\n";
+    }
+
+    @Override
+    public String angivBogID() {
+        return "angiv bogID"+"\n";
+    }
+
+    @Override
+    public String exceptionStringMSG() {
+        return "Ingen-bog-havende-røv"+"\n";
+    }
 }
 
 

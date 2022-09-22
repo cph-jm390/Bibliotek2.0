@@ -21,4 +21,25 @@ public class Engelsk extends ÆndringAfSprog{
         return
                 "Press 1 for: Create book"+ "\n" +"Press 2 for: get books" +"\n" +"Press 3 for: Delete book"+"\n" +"Press 4 for: show book list" + "\n" +"Press 5 for: change language";
     }
-}
+
+    @Override
+    public String angivForfatter() {
+        return "specify author: "+  "\n";
+    }
+
+    @Override
+    public String angivTitle() {
+        return "specify title"+  "\n";
+    }
+
+    @Override
+    public String angivBogID() {
+        return "specify bookID"+"\n";
+    }
+
+    @Override
+    public String exceptionStringMSG() {
+        return "no-book-havin'-ass" +"\n";
+    }
+    }
+
