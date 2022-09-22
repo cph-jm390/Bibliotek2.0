@@ -53,7 +53,7 @@ public class BogMapper {
         String sql = "delete from BogTabel where idBog = ?";
 
         try (Connection con = ConnectionConfiguration.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql);) {
+             PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, bog_id);
             int res = ps.executeUpdate();
             if (res > 0) {
@@ -64,6 +64,31 @@ public class BogMapper {
         }
     }
 
+    public static String bogUdlån(){
+        String sql = "INSERT INTO UdlånsTabel (bogID, lånerID, bogTitel) VALUES (?,?,?)";
+
+        try (Connection con = ConnectionConfiguration.getConnection();
+            PreparedStatement ps = con.prepareStatement(sql)){
+
+            try{
+                ps.setString(1, bruger.getBogID());
+                ps.setString(2, bruger.getLånerID());
+                ps.setString(3, bruger.getBogTitel());
+                ps.executeUpdate();
+
+            } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } ;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return null;
+    }
+
+
+    /*
     public static String flestBøger() {
         String sql = " select Top 1 titel From BogTabel group by titel order by count(*) desc";
         String mestPopulæreBog = " ";
@@ -79,4 +104,6 @@ public class BogMapper {
         }
         return mestPopulæreBog;
     }
+
+     */
 }
