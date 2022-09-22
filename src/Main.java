@@ -25,14 +25,16 @@ public class Main {
 
 
         }
-        public static void udskriv (List < Bog > bøger) {
 
-            for (Bog bog : bøger) {
+    }
 
-                System.out.println(bog.toString());
-            }
+    public static void udskriv(List<Bog> bøger) {
+
+        for (Bog bog : bøger) {
+
+            System.out.println(bog.toString());
         }
-
 
     }
 }
+
